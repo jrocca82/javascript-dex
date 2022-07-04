@@ -1,0 +1,19 @@
+body {
+    background-color: antiquewhite;
+    width: 100%;
+    align-items: center;
+}
+
+.exchange-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+}
+
+#quote-container {
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}

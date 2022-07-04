@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEX</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <form method="get" class="exchange-form">
+        <label for="token"
+          >From:
+          <select id="from-token" name="from-token"></select
+        ></label>
+        <label
+          >To:
+          <select id="to-token" name="to-token"></select>
+        </label>
+        <button type="submit" id="submit-button" disabled>Get Quote</button>
+      </form>
+      <div id="quote-container"></div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
