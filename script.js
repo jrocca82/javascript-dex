@@ -2,12 +2,16 @@
 const serverUrl = "https://9vopybgxlvw2.usemoralis.com:2053/server";
 const appId = "xrNxnZrASuoqmWSeRfOdmZwuzaudFsclbNt86Xob";
 Moralis.start({ serverUrl, appId });
+Moralis.initPlugins();
 
-const tokenValue = (value, decimals) => (decimals ? value / Math.pow(10, decimals): value);
+const tokenValue = (value, decimals) =>
+  decimals ? value / Math.pow(10, decimals) : value;
 
 async function getStats() {
   const balances = await Moralis.Web3API.account.getTokenBalances();
-  tokenBalanceBody.innerHTML = balances.map((token, index) => `
+  tokenBalanceBody.innerHTML = balances
+    .map(
+      (token, index) => `
     <tr>
     <td>${index + 1}</td>
     <td>${token.symbol}</td>
@@ -15,11 +19,12 @@ async function getStats() {
     <td>${tokenValue(token.balance, token.decimals)}</td>
     <td><button>Swap</button></td>
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
 }
 
-
-const tokenBalanceBody = document.querySelector("#token-balances")
+const tokenBalanceBody = document.querySelector("#token-balances");
 async function login() {
   let user = Moralis.User.current();
   if (!user) {
@@ -34,8 +39,13 @@ async function logOut() {
   console.log("logged out");
 }
 
+const buyCrypto = () => {
+  Moralis.Plugins.fiat.buy()
+}
+
 document.getElementById("btn-login").onclick = login;
 document.getElementById("btn-logout").onclick = logOut;
+document.querySelector("#buy-crypto").addEventListener("click", buyCrypto)
 
 async function getTopTenTokens() {
   const res = await fetch("https://api.coinpaprika.com/v1/coins");
