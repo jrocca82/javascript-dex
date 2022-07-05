@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RoccaSwap</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Moralis SDK code -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
   </head>
   <body>
     <header>
@@ -16,28 +19,24 @@
       </div>
       <nav>
         <ul>
-          <button>Log in</button>
+          <button id="btn-login">Metamask Login</button>
           <button>Buy Crypto</button>
-          <button>Log out</button>
+          <button id="btn-logout">Logout</button>
         </ul>
       </nav>
     </header>
     <main>
       <table>
-        <tr>
-          <th>#</th>
-          <th>Symbol</th>
-          <th>Amount</th>
-          <th>Action</th>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td>ETH</td>
-          <td>1000000000000000000</td>
-          <td>
-            <button>Swap</button>
-          </td>
-        </tr>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Symbol</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="token-balances">
+        </tbody>
       </table>
 
       <form method="get" class="exchange-form">
