@@ -52,7 +52,6 @@ async function getStats() {
     <tr>
     <td>${index + 1}</td>
     <td>${token.symbol}</td>
-    <td>${token.amount}</td>
     <td>${tokenValue(token.balance, token.decimals)}</td>
     <td><button 
           class="swap-button" 
