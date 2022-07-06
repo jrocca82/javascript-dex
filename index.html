@@ -15,7 +15,7 @@
       <div class="column-direction">
         <h1>Rocca Swap</h1>
         <h2>Powered by 1inch</h2>
-        <h2>In association with Moralis Academy</h2>
+        <h2>In association with Moralis.io</h2>
       </div>
       <nav>
         <ul>
@@ -39,18 +39,24 @@
         </tbody>
       </table>
 
-      <form method="get" class="exchange-form">
-        <label for="token"
-          >From:
-          <select id="from-token" name="from-token"></select
-        ></label>
-        <label
-          >To:
-          <select id="to-token" name="to-token"></select>
+      <form method="post" class="exchange-form">
+        <label>
+          <span class="from-token"></span>
+          Amount:
+          <input type="text" name="from-amount" class="from-amount" disabled/>
         </label>
-        <button type="submit" id="submit-button" disabled>Get Quote</button>
+        <label for="token"
+          >Swap To:
+          <select id="to-token" name="from-token"></select
+        ></label>
+        <div>
+          <button type="submit" id="quote-button" disabled>Get Quote</button>
+          <button type="submit" id="confirm-swap" disabled>Confirm Swap</button>
+          <button id="cancel" disabled>Cancel</button>
+        </div>
       </form>
       <div id="quote-container"></div>
+      <div class="error"></div>
     </main>
     <footer></footer>
     <script src="script.js"></script>

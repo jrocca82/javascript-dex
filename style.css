@@ -41,7 +41,6 @@ header {
 .column-direction {
     display: flex;
   flex-direction: column;
-  background-color: #BA348D;
   padding: 5px;
   border-radius: 20px;
 }
@@ -96,16 +95,15 @@ td {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 20vh;
   margin-top: 20px;
+  height: 20vh
 }
 
 label {
-  width: 300px;
   justify-content: space-between;
 }
 
-select {
+select, input {
   background-color: #f05274;
   border: 1px solid black;
   border-radius: 5px;
@@ -116,4 +114,9 @@ select {
   justify-content: center;
   align-self: center;
   align-items: center;
+}
+
+.error {
+  color: #BA348D;
+  text-align: center;
 }
